@@ -11,10 +11,10 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
+    private Square box1player;
+    private Square box2opponent;
+    private Triangle nextarrow;
+    private Circle ball1;
     private Person opponent;
     private Person player;
     private boolean drawn;
@@ -24,10 +24,10 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
-        sun = new Circle();
+        box1player = new Square();
+        box2opponent = new Square();
+        nextarrow = new Triangle();  
+        ball1 = new Circle();
         opponent= new Person();
         player = new Person();
         drawn = false;
@@ -39,27 +39,27 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.makeVisible();
+            box1player.moveHorizontal(-140);
+            box1player.moveVertical(20);
+            box1player.changeSize(120);
+            box1player.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
+            box2opponent.changeColor("blue");
+            box2opponent.moveHorizontal(-300);
+            box2opponent.moveVertical(-260);
+            box2opponent.changeSize(240);
+            box2opponent.makeVisible();
     
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
+            nextarrow.changeSize(20, 10);
+            nextarrow.moveHorizontal(20);
+            nextarrow.moveVertical(-60);
+            nextarrow.makeVisible();
     
-            sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeVisible();
+            ball1.changeColor("yellow");
+            ball1.moveHorizontal(100);
+            ball1.moveVertical(-40);
+            ball1.changeSize(80);
+            ball1.makeVisible();
             
             opponent.changeColor("red");
             opponent.moveHorizontal(140);
@@ -79,10 +79,10 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
-        sun.changeColor("black");
+        box1player.changeColor("black");
+        box2opponent.changeColor("white");
+        nextarrow.changeColor("black");
+        ball1.changeColor("black");
         opponent.changeColor("black");
         player.changeColor("black");
     }
@@ -92,10 +92,10 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
-        sun.changeColor("yellow");
+        box1player.changeColor("red");
+        box2opponent.changeColor("black");
+        nextarrow.changeColor("green");
+        ball1.changeColor("yellow");
         opponent.changeColor("green");
         player.changeColor("blue");
     }
